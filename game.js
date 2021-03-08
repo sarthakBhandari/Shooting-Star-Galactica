@@ -196,7 +196,7 @@ function animate(){
         projectile.update()
 
         //REMOVING THE PROJECTILES AFTER THEY REACH THE END OF THE SCREEN
-        if(projectile.x + projectile.radius< 0 || projectile.x + projectile.radius> x || projectile.y + projectile.radius< 0 || projectile.x + projectile.radius> y){
+        if(projectile.x + projectile.radius< 0 || projectile.x + projectile.radius> x || projectile.y + projectile.radius< 0 || projectile.y + projectile.radius> y){
             setTimeout(()=>{
                 projectiles.splice(index,1);
             })
@@ -259,7 +259,7 @@ function animate(){
 // EVENT LISTENER ON WINDOW - so no need for window.
 addEventListener("click", (event)=>{
     const angle = Math.atan2(event.clientY - y/2, event.clientX - x/2);
-    projectiles.push(new Projectile(x/2,y/2,5,"white",{x:4*Math.cos(angle),y:4*Math.sin(angle)}));
+    projectiles.push(new Projectile(x/2,y/2,5,"white",{x:5*Math.cos(angle),y:5*Math.sin(angle)}));
     console.log(angle);
 })
 
